@@ -10,17 +10,20 @@ import jakarta.servlet.http.HttpServletResponse;
 import service.CustomerService;
 
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet("/getAll")
-public class GetAllCustomersController extends HttpServlet {
+@WebServlet("/addNew")
+public class AddNewCustomerController extends HttpServlet {
     @EJB
     private CustomerService service;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        List<Customer> customer = service.getAllCustomers();
-        req.setAttribute("customers", customer);
-        req.getRequestDispatcher("getAllCustomers.jsp").forward(req, resp);
+        req.getRequestDispatcher("addNewCustomer.jsp").forward(req, resp);
+        Customer customer = new Customer();
+        customer.setName(req.getParameter("name"));
+        customer.setSurname(req.getParameter("surname"));
+        customer.setZipCode(Integer.parseInt(req.getParameter("zip")));
+        customer.setEmail(req.getParameter("email"));
+        service.addCustomer(customer);
     }
 }

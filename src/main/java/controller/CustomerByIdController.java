@@ -21,6 +21,6 @@ public class CustomerByIdController extends HttpServlet {
         Long id = Long.parseLong(req.getParameter("id"));
         Customer customer = service.getCustomerById(id);
         req.setAttribute("customer", customer);
-        req.getRequestDispatcher("customerById.jsp").forward(req, resp);
+        req.getRequestDispatcher("getCustomerById.jsp").forward(req, resp);
     }
 }

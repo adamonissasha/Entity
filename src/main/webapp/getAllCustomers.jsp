@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+    <link href="${pageContext.request.contextPath}/style.css" rel="stylesheet" type="text/css">
     <title>All Customers</title>
 </head>
 <body>
@@ -25,5 +26,6 @@
         </tr>
     </c:forEach>
 </table>
+<button><a href="/Entity">To main page</a></button>
 </body>
 </html>

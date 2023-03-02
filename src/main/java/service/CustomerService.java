@@ -18,4 +18,8 @@ public class CustomerService {
     public Customer getCustomerById(Long id) {
         return repository.getCustomerById(id);
     }
+
+    public void addCustomer(Customer customer) {
+        repository.addCustomer(customer);
+    }
 }
