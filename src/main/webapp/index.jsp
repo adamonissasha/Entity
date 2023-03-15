@@ -10,5 +10,8 @@
 <button><a href="/Entity/chooseId"><p>Find customer by id</p></a></button>
 <br/>
 <button><a href="/Entity/addNew"><p>Add new customer</p></a></button>
+<br/>
+<button><a href="/Entity/find"><p>Find</p></a></button>
+
 </body>
 </html>

@@ -12,6 +12,9 @@ public class Customer {
     private Integer zipCode;
     private String email;
 
+    public Customer() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -32,10 +35,6 @@ public class Customer {
         return email;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -50,5 +49,17 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", zipCode=" + zipCode +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

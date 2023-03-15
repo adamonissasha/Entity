@@ -15,6 +15,10 @@ public class CustomerService {
         return repository.getAllCustomers();
     }
 
+    public List<Customer> getCustomersByStr(String str) {
+        return repository.getCustomersByStr(str);
+    }
+
     public Customer getCustomerById(Long id) {
         return repository.getCustomerById(id);
     }
