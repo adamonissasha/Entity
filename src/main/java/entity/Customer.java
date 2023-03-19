@@ -15,6 +15,14 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(Long id, String name, String surname, Integer zipCode, String email) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.zipCode = zipCode;
+        this.email = email;
+    }
+
     public Long getId() {
         return id;
     }

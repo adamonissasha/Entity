@@ -3,11 +3,11 @@
 <html>
 <head>
   <link href="${pageContext.request.contextPath}/style.css" rel="stylesheet" type="text/css">
-  <title>Input id</title>
+  <title>Find</title>
 </head>
 <body>
 <form action="getByStr" method="Get">
-  <p>Input customer ID</p>
+  <p>Input substring</p>
   <label>
     <input type="text" name="str">
   </label>

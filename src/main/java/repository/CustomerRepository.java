@@ -17,7 +17,8 @@ public class CustomerRepository {
 
     public List<Customer> getAllCustomers() {
         EntityManager em = entityManagerFactory.createEntityManager();
-        List<Customer> customers = em.createQuery("select a from Customer a order by a.id", Customer.class).getResultList();
+        List<Customer> customers = em.createQuery("select new entity.Customer(a.id, a.name, a.surname, a.zipCode, a.email)  from Customer a order by a.id", Customer.class).getResultList();
+        em.close();
         return customers;
     }
 
@@ -36,7 +37,7 @@ public class CustomerRepository {
 
     public List<Customer> getCustomersByStr(String str) {
         EntityManager em = entityManagerFactory.createEntityManager();
-        Query query = em.createQuery("select a from Customer a where a.name like :substr or a.surname like :substr or a.email like :substr or a.zipCode like :substr", Customer.class);
+        Query query = em.createQuery("select new entity.Customer(a.id, a.name, a.surname, a.zipCode, a.email) from Customer a where a.name like :substr or a.surname like :substr or a.email like :substr", Customer.class);
         query.setParameter("substr", "%" + str +"%");
         List<Customer> customers = query.getResultList();
         em.close();
